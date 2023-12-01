@@ -4,13 +4,13 @@ const progresoArea = document.querySelector('.progreso-area');
 const subidoArea = document.querySelector('.subido-area');
 
 form.addEventListener('dragover', (e) => {
-    preventDefault();
+    e.preventDefault();
 });
 
 form.addEventListener('drop', (e) => {
-    preventDefault();
+    e.preventDefault();
 
-    fileInput.files = dataTransfer.files;
+    fileInput.files = e.dataTransfer.files;
     let file = fileInput.files[0];
     preUploadFile(file);
 });
